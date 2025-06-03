@@ -1,0 +1,14 @@
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\bin\Debug\net8.0\vCardMaker_Console.exe
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\bin\Debug\net8.0\vCardMaker_Console.deps.json
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\bin\Debug\net8.0\vCardMaker_Console.runtimeconfig.json
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\bin\Debug\net8.0\vCardMaker_Console.dll
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\bin\Debug\net8.0\vCardMaker_Console.pdb
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.GeneratedMSBuildEditorConfig.editorconfig
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.AssemblyInfoInputs.cache
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.AssemblyInfo.cs
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.csproj.CoreCompileInputs.cache
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.dll
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\refint\vCardMaker_Console.dll
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.pdb
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.genruntimeconfig.cache
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\ref\vCardMaker_Console.dll
