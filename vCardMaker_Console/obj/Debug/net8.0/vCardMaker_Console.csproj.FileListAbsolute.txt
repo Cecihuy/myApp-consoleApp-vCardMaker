@@ -12,3 +12,4 @@ A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0
 A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.pdb
 A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.genruntimeconfig.cache
 A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\ref\vCardMaker_Console.dll
+A:\Documents\VSC\myApp-consoleApp-vCardMaker\vCardMaker_Console\obj\Debug\net8.0\vCardMaker_Console.sourcelink.json

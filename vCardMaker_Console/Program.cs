@@ -19,25 +19,28 @@ namespace vCardMaker_Console {
         string name = "";
         string number = "";
         string lastSavedContact = "";
+        if (!cards.Any()){
+          AppUi.NoDataUi();
+        }
         do{
           do{
-            if(name.Length > 15){
+            if (name.Length > 15){
               AppUi.MainUi();
               AppUi.MaxInputUi();
             }
             AppUi.InputNameUi();
             name = Console.ReadLine()!;
-          } while(name.Length > 15);
-          if (name.Equals("->")) {
+          } while (name.Length > 15);
+          if (name.Equals("->")){
             break;
-          } else if (name.Equals("<-")) {
-            if (!cards.Any()) {
+          } else if (name.Equals("<-")){
+            if (!cards.Any()){
               AppUi.MainUi();
               AppUi.NoDataUi();
               continue;
             }
-            if (cards.Last().Key != null) {
-              if (cards.Count <= 1) {
+            if (cards.Last().Key != null){
+              if (cards.Count <= 1){
                 AppUi.MainUi();
                 lastSavedContact = cards.Last().Key;
                 cards.Remove(lastSavedContact);
@@ -58,23 +61,43 @@ namespace vCardMaker_Console {
             continue;
           } else if (name.Equals("<>")){
             AppUi.MainUi();
-            Console.WriteLine($"{"Nama", -20}NomorHape");
-            foreach(KeyValuePair<string, string> viewCard in cards){
-              Console.WriteLine($"{viewCard.Key, -20}{viewCard.Value}");
+            Console.WriteLine($"{"Nama",-20}NomorHape");
+            foreach (KeyValuePair<string, string> viewCard in cards){
+              Console.WriteLine($"{viewCard.Key,-20}{viewCard.Value}");
             }
             Console.ReadLine();
-            AppUi.MainUi();
-            continue;
+            if (cards.Count() != 0){
+              AppUi.MainUi();
+              lastSavedContact = cards.Last().Key;
+              AppUi.SavedContactUi(lastSavedContact);
+              continue;
+            } else{
+              AppUi.MainUi();
+              AppUi.NoDataUi();
+              continue;
+            }
           }
-          do{            
-            do {
+          do{
+            do{
               if (number.Length > 15){
-                AppUi.MainUi();
-                AppUi.MaxInputUi();
+                if (cards.Count != 0){
+                  lastSavedContact = cards.Last().Key;
+                  AppUi.MainUi();
+                  AppUi.SavedContactUi(lastSavedContact);
+                  AppUi.MaxInputUi();
+                  AppUi.InputNameUi();
+                  Console.WriteLine(name);
+                } else{
+                  AppUi.MainUi();
+                  AppUi.NoDataUi();
+                  AppUi.MaxInputUi();
+                  AppUi.InputNameUi();
+                  Console.WriteLine(name);
+                }
               }
               AppUi.InputNumberUi();
               number = Console.ReadLine()!;
-            } while (number.Length > 15); 
+            } while (number.Length > 15);
             bool match = Regex.IsMatch(number, "^[0-9]");
             if (match){
               cards.Add(name, number);
@@ -82,27 +105,50 @@ namespace vCardMaker_Console {
               AppUi.MainUi();
               AppUi.SavedContactUi(lastSavedContact);
               break;
-            }else if (number.Equals("->")){
+            } else if (number.Equals("->")){
               endLoop = "yes";
               break;
-            }else if (number.Equals("<-")){
-              lastSavedContact = cards.Last().Key;
+            } else if (number.Equals("<-")){
+              if (lastSavedContact.Any()){
+                lastSavedContact = cards.Last().Key;
+                AppUi.MainUi();
+                AppUi.SavedContactUi(lastSavedContact);
+                break;
+              } else{
+                AppUi.MainUi();
+                AppUi.NoDataUi();
+                break;
+              }
+            } else if (number.Equals("<>")){
               AppUi.MainUi();
-              AppUi.SavedContactUi(lastSavedContact);
-              break;
-            }else if (number.Equals("<>")){
-              AppUi.MainUi();
-              Console.WriteLine($"{"Nama", -20}NomorHape");
-              foreach(KeyValuePair<string, string> viewCard in cards){
-                Console.WriteLine($"{viewCard.Key, -20}{viewCard.Value}");
+              Console.WriteLine($"{"Nama",-20}NomorHape");
+              foreach (KeyValuePair<string, string> viewCard in cards){
+                Console.WriteLine($"{viewCard.Key,-20}{viewCard.Value}");
               }
               Console.ReadLine();
+              if (lastSavedContact.Any()){
+                AppUi.MainUi();
+                lastSavedContact = cards.Last().Key;
+                AppUi.SavedContactUi(lastSavedContact);
+                AppUi.InputNameUi();
+                Console.WriteLine(name);
+                continue;
+              } else{
+                AppUi.MainUi();
+                AppUi.NoDataUi();
+                AppUi.InputNameUi();
+                Console.WriteLine(name);
+              }
+            } else{
               AppUi.MainUi();
-              continue;
-            }else{
-              AppUi.MainUi();
-              AppUi.SavedContactUi(lastSavedContact);
+              if (lastSavedContact.Any()){
+                AppUi.SavedContactUi(lastSavedContact);
+              } else{
+                AppUi.NoDataUi();
+              }
               Console.WriteLine("Only number and action input key allowed");
+              AppUi.InputNameUi();
+              Console.WriteLine(name);
               endLoop = "no";
             }
           } while (endLoop == "no");
@@ -121,10 +167,13 @@ namespace vCardMaker_Console {
         Console.WriteLine("vCard successfully generated!");
         Console.Write("Try again? yes[y] or no[n] : ");
         string? tryAgain = Console.ReadLine();
-        if(tryAgain!.ToLower() == "y"){
+        if (tryAgain!.ToLower() == "y"){
+          endLoop = "no";
           continue;
-        } else{ endLoop = "yes"; }
-      } while(endLoop == "no");
+        } else {
+          endLoop = "yes"; 
+        }
+      } while (endLoop == "no");
     }
   }
 }
