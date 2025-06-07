@@ -8,7 +8,7 @@ using vCardMaker_Console.Models;
 using vCardMaker_Console.Utility;
 
 namespace vCardMaker_Console {
-  public class Program {
+  public class Program{
     public static void Main(){
       string endLoop = "no";
       do{
