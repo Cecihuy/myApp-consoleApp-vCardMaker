@@ -1,0 +1,1 @@
+semua detail dokumentasi ada di file presentasi.pdf
